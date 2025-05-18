@@ -1,0 +1,122 @@
+/* Reset dasar */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #fef6f9;
+    color: #444;
+  }
+  
+  /* Header */
+  header {
+    text-align: center;
+    padding: 2rem;
+    background-color: #ffdde1;
+    color: #d6336c;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Galeri */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Ukuran card lebih kecil */
+    gap: 10px;
+    padding: 1rem;
+  }
+  
+  
+  
+  /* Gambar seragam */
+  .gallery img {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Kotak */
+    object-fit: contain; /* Menampilkan seluruh gambar tanpa terpotong */
+    background-color: #fff; /* Tambahan opsional agar area kosong tampak bersih */
+    padding: 5px; /* Sedikit ruang di dalam */
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  
+  
+  /* Efek muncul saat discroll */
+  .gallery img.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Hover efek */
+  .gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Lightbox Blur Effect */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(8px); /* Efek burem */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .lightbox.active {
+    display: flex;
+  }
+  
+  .lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+  }
+  
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #ffdde1;
+    color: #d6336c;
+    margin-top: 2rem;
+  }
+  
+  /* Responsif di layar kecil */
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 1.8rem;
+    }
+  
+    .gallery {
+      padding: 1rem;
+      gap: 10px;
+    }
+  
+    footer {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .gallery {
+      grid-template-columns: repeat(2, 1fr); /* 2 kolom tetap */
+    }
+  }
+  
+  
